@@ -14,6 +14,7 @@ export default class Comments extends Component {
 	}
 
 	render() {
+		//очень большая вложенность с проверками выходит, попробуй упростить. И не старайся не писать проверки внутри JSX - не читабельно
 		return this.props.comments && (
 			<div>
 				<button type="button" onClick={this.toggleHandler}>{this.state.isVisible ? 'Hide Comments' : 'Show Comments'}</button>
