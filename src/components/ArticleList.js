@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import Article from './Article'
+//лучше с маленькой буквы
 import Accordeon from './../decorators/accordeon'
 
 const ArticleList = (props) => {
