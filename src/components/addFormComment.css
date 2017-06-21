@@ -1,0 +1,23 @@
+.addFormComments {
+    width: 300px;
+    margin: 20px auto;
+}
+
+.addFormComments input, .addFormComments textarea {
+    width: 94%;
+    margin: 3%;
+}
+
+.addFormComments input.invalid, .addFormComments textarea.invalid {
+    border-color: red;
+}
+
+.addFormComments textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.addFormComments button {
+    margin: 10px auto;
+    display: block;
+}
