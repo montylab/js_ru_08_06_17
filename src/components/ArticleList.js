@@ -13,14 +13,20 @@ class ArticleList extends Component {
         toggleOpenItem: PropTypes.func.isRequired
     }
     render() {
-        const { articles, openItemId, toggleOpenItem } = this.props
-        const articleElements = articles.map(article => <li key={article.id}>
-            <Article
-                article = {article}
-                isOpen = {article.id === openItemId}
-                toggleOpen = {toggleOpenItem(article.id)}
-            />
-        </li>)
+        const { articles, filters, openItemId, toggleOpenItem } = this.props
+        const articleElements = articles.map(article => {
+			if (filters.select.length != 0 && filters.select.find(item => item.value == article.id) === undefined) {
+				return
+			}
+
+			return <li key={article.id}>
+				<Article
+					article = {article}
+					isOpen = {article.id === openItemId}
+					toggleOpen = {toggleOpenItem(article.id)}
+				/>
+			</li>
+        })
 
         return (
             <ul>
@@ -31,5 +37,6 @@ class ArticleList extends Component {
 }
 
 export default connect(state => ({
-    articles: state.articles
+    articles: state.articles,
+    filters: state.filters
 }))(accordion(ArticleList))

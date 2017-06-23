@@ -1,4 +1,4 @@
-import {DELETE_ARTICLE, INCREMENT} from '../constants'
+import {DELETE_ARTICLE, INCREMENT, FILTER_BY_SELECT} from '../constants'
 
 export function increment() {
     return {
@@ -7,8 +7,15 @@ export function increment() {
 }
 
 export function deleteArticle(id) {
-    return {
-        type: DELETE_ARTICLE,
-        payload: { id }
-    }
+	return {
+		type: DELETE_ARTICLE,
+		payload: { id }
+	}
+}
+
+export function filterBySelected(fields) {
+	return {
+		type: FILTER_BY_SELECT,
+		payload: fields
+	}
 }
