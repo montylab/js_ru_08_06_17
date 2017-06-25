@@ -12,10 +12,27 @@ class ArticleList extends Component {
         openItemId: PropTypes.string,
         toggleOpenItem: PropTypes.func.isRequired
     }
+
+    passFilter = (article) => {
+    	const {filters} = this.props
+
+		if (filters.select.length != 0 && filters.select.find(item => item.value == article.id) === undefined) {
+			return false
+		}
+
+		const date = Date.parse(article.date)
+		const {from, to} = filters.date
+		if (from && from - date > 0 || to && to - date < 0) {
+			return false
+		}
+
+		return true
+	}
+
     render() {
-        const { articles, filters, openItemId, toggleOpenItem } = this.props
+        const { articles, openItemId, toggleOpenItem } = this.props
         const articleElements = articles.map(article => {
-			if (filters.select.length != 0 && filters.select.find(item => item.value == article.id) === undefined) {
+			if (!this.passFilter(article)) {
 				return
 			}
 

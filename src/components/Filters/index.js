@@ -11,14 +11,11 @@ class Filters extends Component {
         articles: PropTypes.array
     }
 
-	handleChange = (e) => {
-        debugger;
-    }
 
     render() {
         return (
             <div>
-                <SelectFilter onChange={this.handleChange}/>
+                <SelectFilter/>
                 <DateRange />
             </div>
         )
