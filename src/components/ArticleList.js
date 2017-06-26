@@ -13,6 +13,7 @@ class ArticleList extends Component {
         toggleOpenItem: PropTypes.func.isRequired
     }
 
+	//ок, но еще лучше делать фильтрацию в коннекте
     passFilter = (article) => {
     	const {filters} = this.props
 
