@@ -1,5 +1,5 @@
 import {normalizedComments as defaulComments} from '../fixtures'
-import {} from '../constants'
+import {ADD_COMMENT} from '../constants'
 
 const commentsMap = defaulComments.reduce((acc, comment) => {
     acc[comment.id] = comment
@@ -10,6 +10,7 @@ export default (commentsState = commentsMap, action) => {
     const {type, payload} = action
 
     switch (type) {
+        case ADD_COMMENT: return {...commentsState, [payload.id]: {...payload}}
     }
 
     return commentsState

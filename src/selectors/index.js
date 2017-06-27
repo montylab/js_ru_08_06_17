@@ -1,7 +1,9 @@
 import {createSelector} from 'reselect'
 
 const filtersGetter = state => state.filters
-const articlesGetter = state => state.articles
+const articlesGetter = state => {
+    return Object.keys(state.articles).map(key => state.articles[key])
+}
 const commentsGetter = state => state.comments
 const idGetter = (state, props) => props.id
 
