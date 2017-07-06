@@ -38,6 +38,7 @@ export function addComment(comment, articleId) {
 	}
 }
 
+//зачем all comments, надо было для одной статьи. В начале показывал api для этого
 export function loadAllComments() {
 	return (dispatch) => {
 		dispatch({
