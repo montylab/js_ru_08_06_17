@@ -12,6 +12,7 @@ const CommentRecord = Record({
 })
 
 const ReducerState = Record({
+	//это работает только потому, что ты грузишь сразу все
 	loading: false,
 	loaded: false,
 	entities: new OrderedMap({})
